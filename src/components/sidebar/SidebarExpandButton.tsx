@@ -3,9 +3,7 @@
 import { useSidebarStore } from "@/hooks/use-sidebar-store";
 import { cn } from "@/lib/utils";
 
-interface SidebarExpandButtonProps {}
-
-export default function SidebarExpandButton({}: SidebarExpandButtonProps) {
+export default function SidebarExpandButton() {
   const { isCollapsed, toggleSidebar, _hasHydrated } = useSidebarStore();
 
   if (!_hasHydrated) return null;
