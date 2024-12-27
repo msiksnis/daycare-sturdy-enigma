@@ -37,6 +37,7 @@ export default function SettingsPage({ user }: SettingsPageProps) {
       await updateProfile(data);
       toast({ description: "Profile updated." });
     } catch (error) {
+      console.error(error);
       toast({
         variant: "destructive",
         description: "An error occurred. Please try again.",
