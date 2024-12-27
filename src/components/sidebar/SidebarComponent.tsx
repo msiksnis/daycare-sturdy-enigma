@@ -15,11 +15,11 @@ export default function Sidebar() {
   return (
     <div
       className={cn(
-        "bg-sidebar fixed top-0 z-50 hidden h-screen w-60 transition-all duration-300 md:block",
+        "fixed top-0 z-50 hidden h-screen w-60 bg-sidebar transition-all duration-300 md:block",
         { "md:flex md:w-20": isCollapsed },
       )}
     >
-      <div className="relative h-screen">
+      <div className="relative flex h-screen flex-col">
         <Link
           href="/"
           className={cn(

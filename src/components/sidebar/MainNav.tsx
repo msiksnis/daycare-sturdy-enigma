@@ -84,7 +84,7 @@ export default function MainNav() {
   return (
     <nav
       className={cn(
-        "flex flex-col space-y-2 px-8 transition-all duration-500 md:p-0",
+        "mx-4 flex w-full flex-1 flex-col space-y-2 overflow-hidden transition-all duration-300",
         {
           "md:w-20": isCollapsed,
         },
@@ -94,19 +94,21 @@ export default function MainNav() {
         <Link key={route.href} href={route.href} onClick={closeMenu}>
           <div
             className={cn(
-              route.isActive
-                ? "from-blue-chill-200/90 to-blue-chill-300 hover:bg-blue-chill-300 flex h-full items-center space-x-2.5 whitespace-nowrap rounded-md bg-gradient-to-br px-4 py-2.5 shadow-sm transition-all duration-300 md:mx-4 md:w-[calc(100%-2rem)] md:overflow-hidden"
-                : "hover:to-blue-chill-100 flex h-full items-center space-x-2.5 overflow-hidden whitespace-nowrap rounded-md px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-50 md:mx-4 md:w-[calc(100%-2rem)]",
+              "flex h-full items-center space-x-2.5 overflow-hidden whitespace-nowrap rounded-md px-4 py-2.5 transition-all duration-300 hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-chill-100 md:w-[calc(100%-2rem)]",
+
+              {
+                "bg-gradient-to-br from-blue-chill-200/90 to-blue-chill-300 shadow-sm hover:bg-blue-chill-300 md:overflow-hidden":
+                  route.isActive,
+              },
               { "md:px-2.5": isCollapsed },
             )}
           >
             <>
               <div>{route.icon}</div>
               <div
-                className={cn(
-                  "transition-all duration-100",
-                  isCollapsed ? "md:opacity-0" : "opacity-100",
-                )}
+                className={cn("opacity-100 transition-all duration-300", {
+                  "md:opacity-0": isCollapsed,
+                })}
               >
                 {route.label}
               </div>

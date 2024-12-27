@@ -14,12 +14,12 @@ export default function Container({
   className,
 }: ContainerProps) {
   return (
-    <section className="flex min-h-[calc(100vh-2rem)] flex-col">
-      <header className="pb-2">
-        {heading && <div className="text-3xl font-semibold">{heading}</div>}
+    <section className="flex min-h-screen flex-col p-4">
+      <header className="min-h-10 pb-2">
+        {heading && <div className="text-2xl font-semibold">{heading}</div>}
         {subHeading && <div className="text-gray-700">{subHeading}</div>}
       </header>
-      <div className={cn("bg-muted/50 flex-grow rounded-xl", className)}>
+      <div className={cn("flex-grow rounded-xl bg-card p-4", className)}>
         {children}
       </div>
     </section>
